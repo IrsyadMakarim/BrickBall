@@ -1,0 +1,130 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Scene/Paddle.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scene/Ball.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scene/Brick.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Sprite/Web 1920 – 1.png" type="Texture" id=4]
+[ext_resource path="res://Scene/BrickLvl2.tscn" type="PackedScene" id=5]
+
+[sub_resource type="SegmentShape2D" id=1]
+b = Vector2( 0, 600 )
+
+[sub_resource type="SegmentShape2D" id=2]
+a = Vector2( 0, 600 )
+
+[sub_resource type="SegmentShape2D" id=3]
+b = Vector2( 1024, 0 )
+
+[sub_resource type="SegmentShape2D" id=4]
+b = Vector2( 1024, 0 )
+
+[node name="Game" type="Node2D"]
+
+[node name="BG" type="Sprite" parent="."]
+position = Vector2( 512, 300 )
+texture = ExtResource( 4 )
+
+[node name="Ball" parent="." instance=ExtResource( 2 )]
+position = Vector2( 552, 344 )
+ball_speed = 300.0
+
+[node name="Paddle" parent="." instance=ExtResource( 1 )]
+position = Vector2( 544, 560 )
+
+[node name="Wall" type="Node2D" parent="."]
+
+[node name="LeftWall" type="StaticBody2D" parent="Wall"]
+
+[node name="LW" type="CollisionShape2D" parent="Wall/LeftWall"]
+shape = SubResource( 1 )
+
+[node name="RightWall" type="StaticBody2D" parent="Wall"]
+position = Vector2( 1024, 0 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall/RightWall"]
+shape = SubResource( 2 )
+
+[node name="UpWall" type="StaticBody2D" parent="Wall"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall/UpWall"]
+shape = SubResource( 3 )
+
+[node name="DownWall" type="StaticBody2D" parent="Wall"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall/DownWall"]
+position = Vector2( 0, 600 )
+shape = SubResource( 4 )
+
+[node name="Level1" type="Node2D" parent="."]
+
+[node name="Brick2" parent="Level1" instance=ExtResource( 3 )]
+position = Vector2( 120, 104 )
+brick_color = Color( 1, 0, 0, 1 )
+
+[node name="Brick3" parent="Level1" instance=ExtResource( 3 )]
+position = Vector2( 216, 104 )
+brick_color = Color( 1, 0, 0, 1 )
+
+[node name="Brick4" parent="Level1" instance=ExtResource( 3 )]
+position = Vector2( 312, 104 )
+brick_color = Color( 1, 0, 0, 1 )
+
+[node name="Brick5" parent="Level1" instance=ExtResource( 3 )]
+position = Vector2( 408, 104 )
+brick_color = Color( 1, 0, 0, 1 )
+
+[node name="Brick6" parent="Level1" instance=ExtResource( 3 )]
+position = Vector2( 504, 104 )
+brick_color = Color( 1, 0, 0, 1 )
+
+[node name="Brick7" parent="Level1" instance=ExtResource( 3 )]
+position = Vector2( 600, 104 )
+brick_color = Color( 1, 0, 0, 1 )
+
+[node name="Brick8" parent="Level1" instance=ExtResource( 3 )]
+position = Vector2( 696, 104 )
+brick_color = Color( 1, 0, 0, 1 )
+
+[node name="Brick9" parent="Level1" instance=ExtResource( 3 )]
+position = Vector2( 792, 104 )
+brick_color = Color( 1, 0, 0, 1 )
+
+[node name="Brick10" parent="Level1" instance=ExtResource( 3 )]
+position = Vector2( 888, 104 )
+brick_color = Color( 1, 0, 0, 1 )
+
+[node name="Brick" parent="Level1" instance=ExtResource( 5 )]
+position = Vector2( 120, 144 )
+brick_color = Color( 0.403922, 0.0862745, 0.831373, 1 )
+
+[node name="Brick11" parent="Level1" instance=ExtResource( 5 )]
+position = Vector2( 216, 144 )
+brick_color = Color( 0.403922, 0.0862745, 0.831373, 1 )
+
+[node name="Brick12" parent="Level1" instance=ExtResource( 5 )]
+position = Vector2( 312, 144 )
+brick_color = Color( 0.403922, 0.0862745, 0.831373, 1 )
+
+[node name="Brick13" parent="Level1" instance=ExtResource( 5 )]
+position = Vector2( 408, 144 )
+brick_color = Color( 0.403922, 0.0862745, 0.831373, 1 )
+
+[node name="Brick14" parent="Level1" instance=ExtResource( 5 )]
+position = Vector2( 504, 144 )
+brick_color = Color( 0.403922, 0.0862745, 0.831373, 1 )
+
+[node name="Brick15" parent="Level1" instance=ExtResource( 5 )]
+position = Vector2( 600, 144 )
+brick_color = Color( 0.403922, 0.0862745, 0.831373, 1 )
+
+[node name="Brick16" parent="Level1" instance=ExtResource( 5 )]
+position = Vector2( 696, 144 )
+brick_color = Color( 0.403922, 0.0862745, 0.831373, 1 )
+
+[node name="Brick17" parent="Level1" instance=ExtResource( 5 )]
+position = Vector2( 792, 144 )
+brick_color = Color( 0.403922, 0.0862745, 0.831373, 1 )
+
+[node name="Brick18" parent="Level1" instance=ExtResource( 5 )]
+position = Vector2( 888, 144 )
+brick_color = Color( 0.403922, 0.0862745, 0.831373, 1 )
